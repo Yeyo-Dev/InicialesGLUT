@@ -1,3 +1,12 @@
+/*
+Equipo 2:
+-Diaz Cruz Esteban David
+-Echeverria Valencia Greta Alitzel
+-Gomez Almazan Mart�n
+-Serafin Velazquez Andrea Lizeth
+-Torres Gallardo Angel Gabriel
+-Vargas Hernandez Luis Abraham
+*/
 #include <cstdlib>
 #include <iostream>
 #include <string.h>
@@ -27,6 +36,7 @@ void lineasDivisoras (void){
     glVertex2i (200,50);
     glVertex2i (0, 50);
 }
+
 void lineaH(int x, int y, int largo){
     glVertex2i (x,y);
     glVertex2i (x+largo, y);
@@ -39,11 +49,11 @@ void lineaDiagonalID(int x, int y, int largo){ // Diagonal asi /
     glVertex2i (x,y);
     glVertex2i (x+largo,y+ largo);
 }
-
 void lineaDiagonalDI(int x, int y, int largo){ /* Diagonal asi \ */
     glVertex2i (x,y+largo);
     glVertex2i (x+largo,y);
 }
+
 
 void letraA(int x, int y ){
     //Pata izquierda
@@ -181,8 +191,6 @@ void letraD(int x, int y) {
 void letraG(int x, int y){
 
     lineaV(x,y+2,12);//Linea central
-
-
     lineaDiagonalID(x,y+14.5,2);
     lineaH(x+2,y+16,14);
     lineaV(x+16,y+12,4);
@@ -216,7 +224,30 @@ void letraM(int x, int y ){
     lineaH(x+11,y,5);
 }
 
-void letraS(int x, int y ){
+void letraS(int x, int y){
+    lineaV(x+16,y+12,4);
+    lineaH(x+4,y+16,12);
+    lineaH(x+6,y+12,10);
+    lineaDiagonalID(x,y+12,4);
+    lineaDiagonalID(x+4,y+10,2);
+
+    lineaV(x,y+7,5);
+    //lineaV(x+4,y+9,1);
+    lineaDiagonalDI(x,y+6,1);
+
+    lineaH(x+1,y+6,10);
+    lineaH(x+4,y+10,11);
+    lineaDiagonalDI(x+11,y+5, 1);
+    lineaDiagonalDI(x+15,y+9,1);
+
+    lineaV(x+12,y+4,1);
+    //lineaV(x+15,y+7,1);
+    lineaV(x+16,y+2,7);
+    lineaH(x,y+4,12);
+    lineaH(x,y,14);
+    lineaDiagonalID(x+14,y,2);
+    lineaV(x,y,4);
+
 }
 
 void letraT(int x, int y ){
@@ -234,71 +265,72 @@ void letraT(int x, int y ){
 }
 
 void LetrasIniciales(void){
-int fila1=120,fila2=70,fila3=15;
-int columna[] = {10, 27, 44, 61};
-glClear (GL_COLOR_BUFFER_BIT); // Borra la ventana
-glColor3f (1.0, 0.0, 0.0 ); // Fija color rojo
-glBegin(GL_LINES);
-    lineasDivisoras();
-    //Las letras son de 16 x 16
-    //Establece las coordenadas entre ellas con diferencia de 18
+    int fila[] = {120,70,15};
+    int columna[] = {10, 27, 44, 61};
+    glClear (GL_COLOR_BUFFER_BIT); // Borra la ventana
+    glColor3f (1.0, 0.0, 0.0 ); // Fija color rojo
+    glBegin(GL_LINES);
+        lineasDivisoras();
+        //Las letras son de 16 x 16
+        //Establece las coordenadas entre ellas con diferencia de 18
 
-    //Diaz Cruz Esteban David
-    glColor3f (0.0, 0.0, 0.0 ); // Fija color rojo
-    letraD(columna[0],fila1);
-    letraC(columna[1],fila1);
-    letraE(columna[2],fila1);
-    letraD(columna[3],fila1);
+        //Diaz Cruz Esteban David
+        glColor3f (0.0, 0.0, 0.0 ); // Fija color rojo
+        letraD(columna[0]+8,fila[0]);
+        letraC(columna[1]+8,fila[0]);
+        letraE(columna[2]+8,fila[0]);
+        letraD(columna[3]+8,fila[0]);
 
-    //Echeverria Valencia Greta Alitzel
-    glColor3f (1.0, 0.2, 0.6 ); // Fija color rojo
-    letraE(columna[0] + 105,fila1);
-    letraV(columna[1] + 105,fila1);
-    letraG(columna[2] + 105,fila1);
-    letraA(columna[3] + 105,fila1);
+        //Echeverria Valencia Greta Alitzel
+        glColor3f (1.0, 0.2, 0.6 ); // Fija color rojo
+        letraE(columna[0] + 105,fila[0]);
+        letraV(columna[1] + 105,fila[0]);
+        letraG(columna[2] + 105,fila[0]);
+        letraA(columna[3] + 105,fila[0]);
 
-    //Gomez Almazan Mart�n
-    glColor3f (0.3,0.0,0.6 ); // Fija color rojo
-    letraG(columna[0]+15,fila2);
-    letraA(columna[1]+15,fila2);
-    letraM(columna[2]+15,fila2);
+        //Gomez Almazan Mart�n
+        glColor3f (0.3,0.0,0.6 ); // Fija color rojo
+        letraG(columna[0]+15,fila[1]);
+        letraA(columna[1]+15,fila[1]);
+        letraM(columna[2]+15,fila[1]);
 
-    //Seraf�n Velazquez Andrea Lizeth
-    glColor3f (0.34, 0.77, 0.8 ); // Fija color rojo
-    letraS(columna[0] + 110,fila2);
-    letraV(columna[1] + 105,fila2);
-    letraA(columna[2] + 105,fila2);
-    letraL(columna[3] + 105,fila2);
+        //Seraf�n Velazquez Andrea Lizeth
+        glColor3f (0.34, 0.77, 0.8 ); // Fija color rojo
+        letraS(columna[0] + 105,fila[1]);
+        letraV(columna[1] + 105,fila[1]);
+        letraA(columna[2] + 105,fila[1]);
+        letraL(columna[3] + 105,fila[1]);
 
-    //Torres Gallardo Angel Gabriel
-    glColor3f (0.0, 0.8, 0.8 ); // Fija color rojo
-    letraT(columna[0],fila3);
-    letraG(columna[1],fila3);
-    letraA(columna[2],fila3);
-    letraG(columna[3],fila3);
+        //Torres Gallardo Angel Gabriel
+        glColor3f (0.0, 0.8, 0.8 ); // Fija color rojo
+        letraT(columna[0] + 8,fila[2]);
+        letraG(columna[1] + 8,fila[2]);
+        letraA(columna[2] + 8,fila[2]);
+        letraG(columna[3] + 8,fila[2]);
 
-    //Vargas Hernandez Luis Abraham
-    glColor3f (0.8, 0.2, 0.4 ); // Fija color rojo
-    letraV(columna[0] + 105,fila3);
-    letraH(columna[1] + 105,fila3);
-    letraL(columna[2] + 105,fila3);
-    letraA(columna[3] + 105,fila3);
+        //Vargas Hernandez Luis Abraham
+        glColor3f (0.8, 0.2, 0.4 ); // Fija color rojo
+        letraV(columna[0] + 105,fila[2]);
+        letraH(columna[1] + 105,fila[2]);
+        letraL(columna[2] + 105,fila[2]);
+        letraA(columna[3] + 105,fila[2]);
 
-glEnd();
-glFlush(); // Procesa la rutina tan r�pido
-// como sea posible
+    glEnd();
+    glFlush(); // Procesa la rutina tan r�pido
+    // como sea posible
 }
+
 int main(int argc, char *argv[]){
-glutInit(&argc, argv); // Inicializa glut
-glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB ); // Establece el modo de
-// visualizacion
-glutInitWindowPosition (200, 100);
-glutInitWindowSize (800, 600); // Establece alto y ancho de la
-// ventana
-glutCreateWindow ("Iniciales del equipo 2");
-Inicializa();
-glutDisplayFunc(LetrasIniciales);
-glutMainLoop();
-system("PAUSE");
-return EXIT_SUCCESS;
+    glutInit(&argc, argv); // Inicializa glut
+    glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB ); // Establece el modo de
+    // visualizacion
+    glutInitWindowPosition (200, 100);
+    glutInitWindowSize (800, 600); // Establece alto y ancho de la
+    // ventana
+    glutCreateWindow ("Iniciales del equipo 2");
+    Inicializa();
+    glutDisplayFunc(LetrasIniciales);
+    glutMainLoop();
+    system("PAUSE");
+    return EXIT_SUCCESS;
 }
