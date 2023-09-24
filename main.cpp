@@ -1,8 +1,9 @@
 /*
+Tarea: Dibujar nuestras iniciales
 Equipo 2:
 -Diaz Cruz Esteban David
 -Echeverria Valencia Greta Alitzel
--Gomez Almazan Mart�n
+-Gomez Almazan Martin
 -Serafin Velazquez Andrea Lizeth
 -Torres Gallardo Angel Gabriel
 -Vargas Hernandez Luis Abraham
@@ -225,29 +226,30 @@ void letraM(int x, int y ){
 }
 
 void letraS(int x, int y){
-    lineaV(x+16,y+12,4);
-    lineaH(x+4,y+16,12);
-    lineaH(x+6,y+12,10);
-    lineaDiagonalID(x,y+12,4);
-    lineaDiagonalID(x+4,y+10,2);
-
-    lineaV(x,y+7,5);
-    //lineaV(x+4,y+9,1);
-    lineaDiagonalDI(x,y+6,1);
-
-    lineaH(x+1,y+6,10);
-    lineaH(x+4,y+10,11);
-    lineaDiagonalDI(x+11,y+5, 1);
-    lineaDiagonalDI(x+15,y+9,1);
-
-    lineaV(x+12,y+4,1);
-    //lineaV(x+15,y+7,1);
-    lineaV(x+16,y+2,7);
-    lineaH(x,y+4,12);
-    lineaH(x,y,14);
-    lineaDiagonalID(x+14,y,2);
     lineaV(x,y,4);
+    lineaH(x,y,13);
+    lineaH(x,y+4,12);
 
+    lineaDiagonalDI(x+3,y+10,1);
+    lineaDiagonalID(x+3,y+11,1);
+
+    lineaH(x+4,y+10,9);
+    lineaH(x+3,y+6,9);
+
+    lineaDiagonalDI(x+12,y+5,1);
+    lineaDiagonalID(x+12,y+4,1);
+
+    lineaDiagonalDI(x+13,y+7,3);
+    lineaV(x+16,y+3,4);
+    lineaDiagonalID(x+13,y,3);
+
+    lineaDiagonalDI(x,y+6,3);
+    lineaV(x,y+9,4);
+    lineaDiagonalID(x,y+13,3);
+
+    lineaH(x+3,y+16,13);
+    lineaV(x+16,y+12,4);
+    lineaH(x+4,y+12,12);
 }
 
 void letraT(int x, int y ){
